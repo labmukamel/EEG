@@ -1,0 +1,22 @@
+
+default parameters: 
+
+save_mode       = 0 / 1 /2  % 0 - in each step, 
+			    % 1 - in critic steps (after epoching, after ica, after ICs removal), 
+                            % 2 - only in the end
+channels_number = 73        % 64 -EEG, 8 - externals, 1 - triggers
+filter          = [1 40]    % filter(1) is highpass, filter(2) is lowpass
+rereference     = [69 70]   % average of M1 and M2
+edit_events     - function name
+epochs_events   = {'', ''}  % cell of strings (epochs names)
+epochs_limits   = [before_stimulus, after_stimulus] % in seconds
+
+
+ifs:
+do_filter
+do_rereference
+do_ICA 
+do_dipfit
+
+optionals:
+generate different dataset to each condition
